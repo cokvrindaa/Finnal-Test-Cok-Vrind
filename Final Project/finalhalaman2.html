@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembayaran</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0px;
+
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: arial;
+      padding-right: 100px;
+    }
+
+    .user {
+      color: black;
+      margin-left: 100px;
+    }
+
+    .user>img {
+      margin-top: 20px;
+    }
+
+    .masuk {
+      margin-left: 400px;
+      margin-top: 20px;
+      background-color: rgba(71, 69, 89, 255);
+      width: 100px;
+      text-align: center;
+      border-radius: 100px;
+      color: white;
+    }
+
+    .satu {
+
+      background-color: ghostwhite;
+
+      width: 100%;
+
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .mobilegends {
+      display: flex;
+      flex-direction: row;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 20px;
+      padding: 20px;
+      width: 300px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-right: 50px;
+      margin-left: 200px;
+    }
+
+    .card2 {
+      background-color: white;
+      border-radius: 20px;
+      padding: 20px;
+      width: 500px;
+
+
+    }
+
+    .card3 {
+      background-color: transparent;
+      border-radius: 20px;
+      padding: 20px;
+      width: 300px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-right: 50px;
+      margin-left: 200px;
+    }
+
+    .container-card {
+
+
+
+      display: flex;
+      gap: 20px;
+      flex-flow: wrap;
+      width: fit-content;
+      justify-content: center;
+
+      padding-bottom: 50px;
+    }
+
+    .container-cardpayment {
+
+
+
+      display: flex;
+      gap: 20px;
+      flex-flow: wrap;
+      width: fit-content;
+      justify-content: center;
+
+      padding-bottom: 50px;
+
+    }
+
+    .carddiamond {
+      border-radius: 20px;
+      border: 1px solid rgb(177, 176, 176);
+      height: 100px;
+      width: 100px;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .carddiamond>p {
+      margin: 0;
+      font-size: 13px;
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+
+    .mobilegends2 {
+      display: flex;
+      flex-direction: row;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-top: 50px;
+
+    }
+    .cardpayment {
+      border-radius: 20px;
+      border: 1px solid rgb(177, 176, 176);
+      height: 80px;
+      width: 200px;
+      display: flex;
+
+      padding-bottom: 10px;
+      font-size: 12px;
+      justify-content: space-between;
+    }
+    .cardpayment > div > img {
+      width: 70px;
+      height: 30px;
+      
+    }
+    .kotakbeli{
+      background-color: rgba(71, 69, 89, 255);
+      height: 40px;
+      width: 100px;
+      border-radius: 20px;
+      margin-top: -50px;
+      margin-left: 200px;
+    }
+    .overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: gray;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .loading-spinner {
+      border: 16px solid #f3f3f3;
+      /* Light grey */
+      border-top: 16px solid #3498db;
+      /* Blue */
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: spin 2s linear infinite;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body id="body">
+  <div class="overlay">
+    <div class="loading-spinner"></div>
+  </div>
+  <div class="header">
+    <div class="user">
+      <img src="Ikon_LIPIK-NEW.png" alt="" />
+    </div>
+    <div style="margin-left: 600px; margin-top: 25px; ">
+      <img src="darkmodenew2.png" alt="" style="height: 30px; width: 30px; cursor: pointer;" id="terang">
+      <img src="darkmodeaaaa.png" alt="" id="gelap" style="height: 30px; width: 30px; cursor: pointer;">
+    </div>
+    <div class="tengah"></div>
+    <div class="masuk">
+      <p>Masuk</p>
+    </div>
+  </div>
+  <div class="satu" id="satu">
+    <div style="margin-left: 200px; display: flex; width: 500px;">
+      <a style=" width: 50px;" href="final.html">
+        <p>HOME</p>
+      </a>
+      <p style="margin-right: 5px; margin-left: 5px;">/</p>
+      <p style="width: 30;">Mobile-Legends</p>
+    </div>
+    <div class="mobilegends">
+      <div class="card">
+        <div style="display: flex; justify-content: space-between;">
+          <div style="display: flex; margin-top: 25px">
+            <img style="border-radius: 15px; margin-right: 10px;"
+              src="https://ik.imagekit.io/ljwckh9hmdf/images/mobile-legends.png?v=1700559002&tr=w-64%2Cq-75" alt="">
+            <b>
+              <p >Mobile Legends</p>
+            </b>
+          </div>
+
+          <img style="height: 30px; margin-top: 10px;"
+            src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/badge-10x-guarantee.png?tr=w-96%2Cq-75"
+            alt="">
+        </div>
+        <b>
+          <p>Cara TopUp</p>
+        </b>
+        <p>
+          1. Masukkan User ID dan Zone ID Anda, Contoh : 1234567 (1234)
+          <br>
+          2. Pilih Nominal Diamonds yang kamu inginkan
+          <br>
+          3. Selesaikan pembayaran
+          <br>
+          4. Diamonds akan ditambahkan ke akun Mobile Legends kamu
+        </p>
+      </div>
+      <div class="card2">
+        <div style="display: flex; width: 100%; border-bottom: 1px solid rgb(223, 222, 222);">
+          <p style="width: 50%; text-align: center;">Pembeilan</p>
+          <p style="width: 50%; text-align: center;">Gift Voucher</p>
+
+        </div>
+        <div style="display: flex;"><span
+            style="background-color: rgba(255,215,221,255); margin-top: 20px; margin-bottom: 15px; padding-left: 10px; padding-right: 10px; padding-top: 3px ; margin-right: 10px; border-radius: 100%;">1</span>
+          <p style="font-size: larger; font-weight: bold;">Pilih Nominal</p>
+        </div>
+        <div class="container-card">
+
+
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+            <p style="margin: 0;">5 Diamonds (5 + 0 Bonus)</p>
+          </div>
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+
+            <p>8 Diamonds (7 + 1 Bonus)</p>
+            <p>Rp 1.000</p>
+          </div>
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+
+            <p>12 Diamonds (11 + 1 Bonus)</p>
+            <p>Rp 2.000</p>
+          </div>
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+
+            <p>15 Diamonds (13 + 2 Bonus)</p>
+            <p>Rp 4.000</p>
+          </div>
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+
+            <p>25 Diamonds (24 + 1 Bonus)</p>
+            <p>Rp 5.000</p>
+          </div>
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+
+            <p>30 Diamonds (29 + 1 Bonus)</p>
+            <p>Rp 6.000</p>
+          </div>
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+
+            <p>40 Diamonds (38 + 2 Bonus)</p>
+            <p>Rp 8.000</p>
+          </div>
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+
+            <p>50 Diamonds (59 + 1 Bonus)</p>
+          </div>
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+
+            <p>80 Diamonds (79 + 1 Bonus)</p>
+            <p>Rp 10.000</p>
+          </div>
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+
+            <p>90 Diamonds (89 + 1 Bonus)</p>
+            <p>Rp 20.000</p>
+          </div>
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+
+            <p>100 Diamonds (99 + 1 Bonus)</p>
+            <p>Rp 25.000</p>
+          </div>
+          <div class="carddiamond">
+            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/lapakgaming/images/rebranding/Icon_per_Denom/mobile_legends_1.png?tr=w-48%2Cq-75"
+              alt="">
+
+            <p>130 Diamonds (129 + 1 Bonus)</p>
+            <p>Rp 28.000</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="mobilegends2">
+      <div class="card3">
+
+      </div>
+      <div class="card2">
+        <div style="display: flex; width: 100%; ">
+
+
+        </div>
+        <div style="display: flex;"><span
+          style="background-color: rgba(255,215,221,255); margin-top: 20px; margin-bottom: 15px; padding-left: 10px; padding-right: 10px; padding-top: 3px ; margin-right: 10px; border-radius: 100%;">2</span>
+          
+          <p style="font-size: larger; font-weight: bold;">Pilih Metode Pembayaran</p>
+        </div>
+        <p>E-Wallet dan QRIS</p>
+        <div class="container-cardpayment">
+          <div class="cardpayment">
+            <div style="display: flex; margin-top: 25px">
+              <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/images/logo-dana.png?w=96&q=75"
+              alt="">
+              <p style="margin-left: 5px; font-size: 15;">Dana</p>
+            </div>
+           
+            <p style="margin: 0; margin-top:35px; margin-right: 5px; font-weight:bold">Rp.10,000</p>
+          </div>
+          <div class="cardpayment">
+            <div style="display: flex; margin-top: 25px">
+              <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/images/logo-gopay.png?w=96&q=75"
+              alt="">
+
+              <p style="margin-left: 5px; font-size: 15;">Gopay</p>
+
+            </div>
+            <p style="margin: 0; margin-top:35px; margin-right: 5px; font-weight:bold">Rp.10,000</p>
+          </div>
+          <div class="cardpayment">
+            <div style="display: flex; margin-top: 25px">
+              <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/images/logo-ovo.png?w=96&q=75"
+              alt="">
+              <p style="margin-left: 5px; font-size: 15;">Ovo</p>
+
+              
+
+            </div>
+            <p style="margin: 0; margin-top:35px; margin-right: 5px; font-weight:bold">Rp.10,000</p>
+          </div>
+          <div class="cardpayment">
+            <div style="display: flex; margin-top: 25px">            <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/images/logo-qris.png?w=96&q=75"
+              alt="">
+
+              <p style="margin-left: 5px; font-size: 15;">QRIS</p>
+          </div>
+          <p style="margin: 0; margin-top:35px; margin-right: 5px; font-weight:bold">Rp.10,000</p>
+
+          </div>
+          <div class="cardpayment">
+            <div style="display: flex; margin-top: 25px">
+              <img
+              src="https://ik.imagekit.io/ljwckh9hmdf/images/logo-linkaja.png?w=96&q=75"
+              alt="">
+              <p style="margin-left: 5px; font-size: 15;">Linka Aja</p>
+            </div>
+            <p style="margin: 0; margin-top:35px; margin-right: 5px; font-weight:bold">Rp.10,000</p>
+
+
+          </div>
+
+        </div>
+        <div class="kotakbeli">
+          <p style="color: white; padding-left: 34px; padding-top: 8px;" >Beli!</p>
+        </div>
+      </div>
+    </div>
+<script>
+      $(document).ready(function () {
+        $(".overlay").fadeIn(3000)
+        setTimeout(function () {
+        $(".overlay").fadeOut(1000)
+        }, 1000)
+      })
+      $("#gelap").click(function () {
+        $("#body").css("background-color", "black")
+        $("#satu").css("background-color", "black")
+        $(".card").css("background-color", "black")
+        $(".card2").css("background-color", "black")
+        $(".footer").css("background-color", "black")
+        $("p").css("color", "white")
+        $("h2").css("color", "white")
+      })
+</script>
+</body>
+
+</html>

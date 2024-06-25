@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lipik Game KW super</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0px;
+      /* background-image: url("background-repeat.svg"); */
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+      font-family: arial;
+    }
+
+    .tengah {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      color: gray;
+      margin-top: 20px;
+      margin-left: 200px;
+      font-family: Arial;
+    }
+
+    .user {
+      color: black;
+      margin-left: 100px;
+    }
+
+    .user>img {
+
+      margin-top: 20px;
+    }
+
+    .masuk {
+      margin-left: 50px;
+      margin-top: 20px;
+      background-color: rgba(71, 69, 89, 255);
+      width: 100px;
+      text-align: center;
+      border-radius: 100px;
+      color: white;
+    }
+
+    .isi {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .gambar {
+      margin-top: 30px;
+      border-radius: 100px;
+      margin-left: 320px;
+    }
+
+    .kotak1 {
+      background-color: white;
+      border: 2px solid gray;
+      border-radius: 20px;
+      height: 30px;
+      color: gray;
+      padding: 10px 10px 0px 10px;
+    }
+
+    .flexkotak {
+      margin-left: 150px;
+      margin-top: 50px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .container-card {
+      padding-left: 100px;
+      padding-right: 100px;
+      margin-top: 50px;
+      display: flex;
+      gap: 20px;
+      flex-flow: wrap;
+      width: fit-content;
+      justify-content: center;
+
+      padding-bottom: 50px;
+    }
+
+    .card {
+      border-radius: 20px;
+      border: 2px solid gray;
+      height: 200px;
+      width: 200px;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .card>img {
+      height: 150px;
+      width: 150px;
+
+      margin-top: 10px;
+      border-radius: 25px;
+    }
+
+    h2 {
+      margin-left: 125px;
+      margin-top: 50px;
+    }
+
+    .footer {
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-top: 50px;
+      background-color: gainsboro;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 50px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-bottom: 50px;
+    }
+
+    .footer>img {
+      height: 80px;
+      width: 180px;
+    }
+
+    #cars {
+      padding: 10px;
+      border-radius: 20px;
+      width: 200px;
+      border: solid black 2px;
+    }
+
+    .media {
+      display: flex;
+      gap: 20px;
+    }
+
+    .media>a>img {
+      width: 25px;
+    }
+
+    p {
+      font-family: Arial;
+    }
+
+    .overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: gray;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loading-spinner {
+      border: 16px solid #f3f3f3;
+      /* Light grey */
+      border-top: 16px solid #3498db;
+      /* Blue */
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: spin 2s linear infinite;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .slideicon {
+      height: 15px;
+      width: 50px;
+      background-color: gray;
+      border-radius: 10px;
+      border: none;
+    }
+  </style>
+</head>
+
+<body id="body">
+  <div class="overlay">
+    <div class="loading-spinner"></div>
+  </div>
+  <div class="header">
+    <div class="user">
+      <img src="Ikon_LIPIK-NEW.png" alt="" />
+    </div>
+    
+    <div style="margin-left: 600px; margin-top: 25px; ">
+      <img src="darkmodenew2.png" alt="" style="height: 30px; width: 30px; cursor: pointer;" id="terang">
+      <img src="darkmodeaaaa.png" alt="" id="gelap" style="height: 30px; width: 30px; cursor: pointer;">
+    </div>
+
+    <div class="masuk">
+      <a href="loginfinal.html">
+        <p style="color: white;" id="masukteks">Masuk</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="isi">
+    <div class="gambar">
+      <img src="Holideals-Banner.webp" alt="" id="banner" />
+    </div>
+    <button class="slideicon" style="margin-left: 650px;" id="slide1"> </button>
+    <button class="slideicon" id="slide2"> </button>
+
+  </div>
+  <div class="flexkotak">
+    <div class="kotak1">🔥 Lagi Populer</div>
+    <div class="kotak1">🌟 Baru Rilis</div>
+    <div class="kotak1">Top Up Langsung</div>
+    <div class="kotak1">Top Up login</div>
+    <div class="kotak1">Voucher</div>
+    <div class="kotak1">Pulsa</div>
+    <div class="kotak1">Entertaiment</div>
+  </div>
+  <h2>🔥 Lagi Populer</h2>
+  <div class="container-card">
+    <a href="finalhalaman2.html" class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/mobile-legends.png?v=1700559002&tr=w-256%2Cq-75" alt="" />
+      <p style="color: black;">Mobile Legends</p>
+    </a>
+
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/ff.jpg?v=1675843174&tr=w-256%2Cq-75" alt="" />
+      <p>Free Fire</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/BS_1.jpg?v=1699945904&tr=w-256%2Cq-75" alt="" />
+      <p>Blood Strike</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/bigo-live.jpg?tr=w-256%2Cq-75" alt="" />
+      <p>Bigo Live</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/GENSHINCRYSTAL.jpg?v=1678255659&tr=w-256%2Cq-75" alt="" />
+      <p>Gensin Imapact</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/pubgm-logo.jpg?tr=w-256%2Cq-75" alt="" />
+      <p>Pubg Mobile</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/roglobal.png?v=1677649826&tr=w-256%2Cq-75" alt="" />
+      <p>Ragnarok Orgin Global</p>
+    </div>
+    <div class="card">
+      <img
+        src="https://ik.imagekit.io/ljwckh9hmdf/images/voucher-steam-wallet-indonesia.jpg?v=1663561903&tr=w-256%2Cq-75"
+        alt="" />
+      <p>Steam</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/valorant-logo.jpg?tr=w-256%2Cq-75" alt="" />
+      <p>Valorant</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/Playstation.jpg?v=1704518011&tr=w-256%2Cq-75" alt="" />
+      <p>Valorant</p>
+    </div>
+  </div>
+
+  <h2>🌟 Baru Rilis</h2>
+  <div class="container-card">
+    <div class="card">
+      <img src="https://assets.lapakgaming.com/images/souls-login.png?v=1705391816&tr=w-256%2Cq-75" alt="" />
+      <p>Souls Login</p>
+    </div>
+
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/turbo-vpn.png?v=1701933468&tr=w-256%2Cq-75" alt="" />
+      <p>Turbo Vpn</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/hago.png?v=1701836224&tr=w-256%2Cq-75" alt="" />
+      <p>Hago</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/monster-saga.png?v=1702287060&tr=w-256%2Cq-75" alt="" />
+      <p>Monster Saga</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/icon.png?v=1701362491&tr=w-256%2Cq-75" alt="" />
+      <p>Black Cover Mobile</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/icon.png?v=1701362491&tr=w-256%2Cq-75" alt="" />
+      <p>Black Cover Login</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/roglobal.png?v=1677649826&tr=w-256%2Cq-75" alt="" />
+      <p>Ragnarok Orgin Global</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/mycardtw.png?v=1700282599&tr=w-256%2Cq-75" alt="" />
+      <p>My Card</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/octopath-traveler.png?v=1702009007&tr=w-256%2Cq-75" alt="" />
+      <p>CotC</p>
+    </div>
+    <div class="card">
+      <img src="https://ik.imagekit.io/ljwckh9hmdf/images/tarisland.jpg?v=1700279371&tr=w-256%2Cq-75" alt="" />
+      <p>Taris Land</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div> <img src="Ikon_LIPIK-NEW.png" alt="" />
+      <p>
+        <b>PT Global Digital Indokreasi</b>
+        <br />
+        Website top up game termurah dan terpercaya
+      </p>
+
+
+      <select name="cars" id="cars">
+        <option value="volvo">Indonesia</option>
+        <option value="saab">Malaysia</option>
+        <option value="mercedes">Philipins</option>
+        <option value="audi">Singapore</option>
+      </select>
+    </div>
+    <div>
+      <h3>Hubungi Kami</h3>
+      <p>cs@lipikgame aja</p>
+      <p>Chat Whatsapp</p>
+      <hr>
+      <p>
+        Layanan Pengaduan Konsumen
+        <br>
+        Direktorat Jenderal
+        <br>
+        Perlindungan Konsumen
+        <br>dan Tertib Niaga
+        <br>Kementerian Perdagangan RI
+        <br>Versi KW
+
+      </p>
+
+    </div>
+    <div>
+      <h3>Reseller</h3>
+      <p>Login Reseller</p>
+      <p>Daftar Resseler</p>
+    </div>
+    <div>
+      <h3>Informasi</h3>
+      <p>Syarat Dan Ketentuan</p>
+      <p>Kebijakan Privasi</p>
+      <p>Promo</p>
+      <p>Blog</p>
+      <p>Affilate</p>
+    </div>
+    <div>
+      <h3>Ikuti Kami</h3>
+      <div class="media">
+        <a href="https://www.facebook.com/lapakgaming.id?_rdc=1&_rdr"><img src="icon-facebook.png" alt=""></a>
+        <a href="https://www.instagram.com/lapakgaming.id"><img src="icon-instagram.png" alt=""></a>
+        <a href="https://twitter.com/lapakgamingid"><img src="icon-x-20231018.png" alt=""></a>
+        <a href="https://www.tiktok.com/@lapakgaming.id"><img src="icon-tiktok.png" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".overlay").fadeIn(3000)
+      setTimeout(function () {
+        $(".overlay").fadeOut(1000)
+      }, 1000)
+      $("#gelap").click(function () {
+        $("#body").css("background-color", "black")
+        $(".footer").css("background-color", "black")
+        $("p").css("color", "white")
+        $("h2").css("color", "white")
+      })
+      $("#terang").click(function () {
+        $("#body").css("background-color", "white")
+        $(".footer").css("background-color", "white")
+        $("p").css("color", "black")
+        $("h2").css("color", "black")
+        $("#masukteks").css("color", "white")
+      })
+      $("#slide2").click(function () {
+        $("#banner").attr("src", "banner2.webp")
+      })
+      $("#slide1").click(function () {
+        $("#banner").attr("src", "Holideals-Banner.webp")
+      })
+    })
+  </script>
+</body>
+
+</html>

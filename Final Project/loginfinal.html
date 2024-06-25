@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url(walpaperlogin.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        p.atasnya {
+            text-align: center;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            size: 100px;
+            margin-top: 100px;
+
+        }
+
+        .login {
+            background-color: white;
+            height: 400px;
+            width: 400px;
+            margin-left: 465px;
+            margin-top: 100px;
+        }
+
+        .gambar {
+            background-image: url(gamber2.jpg);
+            width: 400px;
+            height: 100px;
+            background-size: cover;
+            padding: 50px 0 0 0;
+        }
+
+        p.signin {
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            size: 100px;
+        }
+        .form {
+            margin-top: 40px;
+            margin-left: 95px;
+        }
+        input[type=text] {
+            outline: none;
+            width: 100%;
+            margin-top: 10px;
+            border: solid gray;
+            border-radius: 25px;
+            height: 40px;
+            width: 200px;
+        }
+        input[type=password] {
+            outline: none;
+            width: 100%;
+            margin-top: 10px;
+            border: solid gray;
+            border-radius: 25px;
+            height: 40px;
+            width: 200px;
+
+        }
+
+        .form1 {
+
+            margin-top: 10px;
+            margin-left: 95px;
+        }
+
+        button {
+            padding: 10px 80px 10px 80px;
+            margin-left: 98px;
+            color: white;
+            background-color: darkblue;
+            border: none;
+            margin-top: 20px;
+            border-radius: 25px;
+
+        }
+
+        .eror {
+            display: none;
+            color: red;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+    </style>
+</head>
+
+<body>
+    <b>
+        <p class="atasnya">Frist try to log with anyting to see a falied Login...</p>
+    </b>
+
+    <form class="login" id="loginform">
+        <div class="gambar">
+            <b>
+                <p class="signin">SIGN IN</p>
+            </b>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="username anda.." id="email">
+
+        </div>
+        <div class="form1">
+            <input type="password" placeholder="Password" id="passoword"></input>
+        </div>
+
+        <div class="button">
+            <button type="submit">Submit</button>
+        </div>
+        <b>
+            <p class="eror" id="eror">Username dan password tidak ditemukan</p>
+        </b>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $("#loginform").on("submit", function (e) {
+                e.preventDefault()
+                var email = $("#email").val()
+                var passoword = $("#passoword").val();
+                if (email === "cokvrind" && passoword === "123") {
+                    window.location.href = '/final.html'
+                }
+                else {
+                    $("#eror").css("display", "block")
+                    $("#loginform").css("height", "415px")
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>
